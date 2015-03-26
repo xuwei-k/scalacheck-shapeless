@@ -7,9 +7,9 @@ moduleName := _name
 
 name := _name
 
-scalaVersion := "2.11.5"
+scalaVersion := "2.11.6"
 
-crossScalaVersions := Seq("2.10.4", "2.11.5")
+crossScalaVersions := Seq("2.10.4", "2.11.6")
 
 resolvers ++= Seq(
   Resolver.sonatypeRepo("releases"),
