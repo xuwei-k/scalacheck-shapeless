@@ -67,3 +67,8 @@ libraryDependencies +=
 (Macro paradise plugin also necessary with scala 2.10, see above.)
 
 Available for scala 2.10 and 2.11. Uses scalacheck 1.12.2 and shapeless 2.1.0.
+
+## See also
+
+[scalacheck-extensions](https://github.com/cvogt/scalacheck-extensions),
+a macro-based automatic `Arbitrary` generation
