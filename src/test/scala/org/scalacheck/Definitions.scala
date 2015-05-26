@@ -57,6 +57,18 @@ object Definitions {
   /*final class Bar extends Foo
   final class Baz(i1: Int)(s1: String) extends Foo*/
 
+  object ImageSize extends Enumeration {
+    type ImageSize = Value
+    val small, medium, large, extralarge = Value
+
+    //  This one seems to be required:
+    implicit def imageSizeArbitrary: Arbitrary[ImageSize] =
+      Arbitrary(Gen.oneOf(values.toSeq))
+    //  but not this one:
+    // implicit def imageSizeShrink: Shrink[ImageSize] = ???
+  }
+
+  case class Image(size: ImageSize.ImageSize)
 }
 
 // Proxied type classes
@@ -78,6 +90,8 @@ object Instances {
   implicit def aArbitrary: Arbitrary[A] = cachedImplicit
   implicit def dArbitrary: Arbitrary[D] = cachedImplicit
 
+  implicit def imageArbitrary: Arbitrary[Image] = cachedImplicit
+
   implicit def t1Shrink: Shrink[T1.Tree] = cachedImplicit
   implicit def t2Shrink: Shrink[T2.Tree] = cachedImplicit
 
@@ -91,4 +105,7 @@ object Instances {
   implicit def baseShrink: Shrink[Base] = cachedImplicit
   implicit def aShrink: Shrink[A] = cachedImplicit
   implicit def dShrink: Shrink[D] = cachedImplicit
+
+  implicit def imageShrink: Shrink[Image] = cachedImplicit
+
 }

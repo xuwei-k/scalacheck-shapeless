@@ -52,6 +52,10 @@ object Tests extends Properties("Tests") {
   illTyped(" implicitly[Arbitrary[NoArbitraryType]] ")
   illTyped(" implicitly[Arbitrary[ShouldHaveNoArb]] ")
 
+  property("type with enumeration") = {
+    Prop.forAll(Arbitrary.arbitrary[Image])(ok)
+  }
+
 
   // These two make scalac almost diverge, especially the first one.
   // The few times I saw one of them converge, the result was the one I expected though.
