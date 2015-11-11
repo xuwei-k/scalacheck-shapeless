@@ -20,7 +20,7 @@ lazy val scalacheckShapeless = crossProject.in(file("."))
 lazy val scalacheckShapelessJVM = scalacheckShapeless.jvm
 lazy val scalacheckShapelessJS = scalacheckShapeless.js
 
-lazy val coreName = "scalacheck-shapeless_1.13"
+lazy val coreName = "scalacheck-shapeless_1.12"
 
 lazy val commonSettings = Seq(
   organization := "com.github.alexarchambault",
@@ -39,7 +39,7 @@ lazy val compileSettings = Seq(
     Resolver.sonatypeRepo("snapshots")
   ),
   libraryDependencies ++= Seq(
-    "org.scalacheck" %%% "scalacheck" % "1.13.0-bceacad-SNAPSHOT",
+    "org.scalacheck" %%% "scalacheck" % "1.12.5",
     "com.chuusai" %%% "shapeless" % "2.3.0-SNAPSHOT",
     "com.github.alexarchambault" %%% "derive" % "0.1.0-SNAPSHOT",
     "org.scala-lang" % "scala-reflect" % scalaVersion.value % "provided"

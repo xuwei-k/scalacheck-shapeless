@@ -1,3 +1,5 @@
+*Beware tests cannot be run on this branch*
+
 # scalacheck-shapeless
 
 Generation of arbitrary case classes / ADTs with [scalacheck](https://github.com/rickynils/scalacheck) and [shapeless](https://github.com/milessabin/shapeless)
